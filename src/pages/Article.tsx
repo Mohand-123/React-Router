@@ -1,5 +1,9 @@
-function Article() {
-  return <h1>Hello from Article</h1>;
-}
+  import { useParams } from "react-router";
 
-export default Article;
+  function Article() {
+    const { id } = useParams();
+
+    return <h1>Hello from Article {id}</h1>;
+  }
+
+  export default Article;
