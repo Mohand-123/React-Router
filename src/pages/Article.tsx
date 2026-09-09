@@ -1,9 +1,19 @@
-  import { useParams } from "react-router";
+import { useLoaderData } from "react-router";
 
-  function Article() {
-    const { id } = useParams();
+type Data = {
+  title: string;
+  content: string;
+};
 
-    return <h1>Hello from Article {id}</h1>;
-  }
+function Article() {
+  const data = useLoaderData() as Data;
 
-  export default Article;
+  return (
+    <article>
+      <h1>{data.title}</h1>
+      <p>{data.content}</p>
+    </article>
+  );
+}
+
+export default Article;
